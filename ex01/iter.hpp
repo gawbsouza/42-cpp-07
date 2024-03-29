@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gasouza <gasouza@student.42sp.org.br >     +#+  +:+       +#+        */
+/*   By: gasouza <gasouza@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:54:57 by gasouza           #+#    #+#             */
-/*   Updated: 2024/03/17 17:16:20 by gasouza          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:26:38 by gasouza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 
 template <typename T>
 void iter( T * arr, size_t len, void (fun)(T &))
+{
+    for (size_t i = 0; i < len; i++) {
+        fun( arr[i] );
+    }
+}
+
+template <typename T>
+void iter( T * arr, size_t len, void (fun)(const T &))
 {
     for (size_t i = 0; i < len; i++) {
         fun( arr[i] );
