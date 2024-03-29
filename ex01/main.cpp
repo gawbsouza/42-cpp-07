@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gasouza <gasouza@student.42sp.org.br >     +#+  +:+       +#+        */
+/*   By: gasouza <gasouza@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:49:10 by gasouza           #+#    #+#             */
-/*   Updated: 2024/03/29 10:59:50 by gasouza          ###   ########.fr       */
+/*   Updated: 2024/03/29 16:11:27 by gasouza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int main()
     iter(strings, stringsSize, &valueWithComma);
     std::cout << std::endl;
 
-    float   floats[]    = {-85558.0f, 5.3444f, 0.1f, 5512.33f, 42.424242f};
-    int     floatsSize  = 5;
+    double	doubles[]	= {-85558.0, 5.3444, 0.1, 5512.33, 42.4242};
+    int		doublesSize	= 5;
     
-    std::cout << "Floats: ";
-    iter(floats, floatsSize, &valueWithComma);
+    std::cout << "Doubles: ";
+    iter(doubles, doublesSize, &valueWithComma);
     std::cout << std::endl;
     
     return 0;
