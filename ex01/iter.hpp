@@ -6,7 +6,7 @@
 /*   By: gasouza <gasouza@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 16:54:57 by gasouza           #+#    #+#             */
-/*   Updated: 2024/03/29 22:26:38 by gasouza          ###   ########.fr       */
+/*   Updated: 2024/03/29 22:43:09 by gasouza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 
 template <typename T>
-void iter( T * arr, size_t len, void (fun)(T &))
+void iter( T * arr, size_t len, void (*fun)(T &))
 {
     for (size_t i = 0; i < len; i++) {
         fun( arr[i] );
@@ -25,7 +25,7 @@ void iter( T * arr, size_t len, void (fun)(T &))
 }
 
 template <typename T>
-void iter( T * arr, size_t len, void (fun)(const T &))
+void iter( T * arr, size_t len, void (*fun)( const T &))
 {
     for (size_t i = 0; i < len; i++) {
         fun( arr[i] );
@@ -33,7 +33,7 @@ void iter( T * arr, size_t len, void (fun)(const T &))
 }
 
 template <typename T>
-void valueWithComma( T & value ) 
+void valueWithComma( const T & value ) 
 {
     std::cout  << value << ", ";
 }
