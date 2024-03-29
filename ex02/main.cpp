@@ -6,15 +6,15 @@
 /*   By: gasouza <gasouza@student.42sp.org.br >     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:47:34 by gasouza           #+#    #+#             */
-/*   Updated: 2024/03/17 19:38:36 by gasouza          ###   ########.fr       */
+/*   Updated: 2024/03/29 12:02:39 by gasouza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 #include <iostream>
 
-int main() {
-
+int main()
+{
     std::cout << "# Empty Array --- " << std::endl;
     Array<int> emptyArr;
     std::cout << "Size: " << emptyArr.size() << std::endl;

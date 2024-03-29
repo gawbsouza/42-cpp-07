@@ -6,7 +6,7 @@
 /*   By: gasouza <gasouza@student.42sp.org.br >     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:23:48 by gasouza           #+#    #+#             */
-/*   Updated: 2024/03/17 19:38:27 by gasouza          ###   ########.fr       */
+/*   Updated: 2024/03/29 12:02:14 by gasouza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,36 @@
 # include <exception>
 # include <iostream>
 
-template <typename T>
+template < typename T >
 class Array 
 {
 private:
 
-    T *     _array;
-    unsigned int  _size;
+    T *             _array;
+    unsigned int    _size;
 
 public:
 
     // Constructors
     
     Array( void ) { 
-        this->_array = new T[0];
+        this->_array = NULL;
         this->_size = 0; 
     };
     
     Array( unsigned int size ) {
-        this->_array = new T[size];
+        this->_array = new T[size]();
         this->_size = size;
     }
     
     Array( const Array & ref ) {
+        this->_array = NULL;
+        this->_size = 0; 
         *this = ref;
     }
     
     ~Array( void ){
-        delete [] _array;
+        delete [] this->_array;
     }
 
     // Methods
@@ -59,23 +61,25 @@ public:
     {
         if (this != &ref)
         {
-            // delete [] _array;
-            this->_array = new T[ref._size];
+            if (this->_array != NULL) {
+                delete [] this->_array;
+            }
+            this->_size = ref._size;
+            this->_array = new T[ref._size]();
             
             for(unsigned int i = 0; i < ref._size; i++) {
                 this->_array[i] = ref._array[i];
             }
         }
-        this->_size = ref._size;
         return *this;
     }
 
     T & operator[]( unsigned int i ) const
     {
-        if ( i >= _size ) {
+        if ( i >= this->_size ) {
             throw IndexOutOfBoundsException();
         }
-        return _array[i];
+        return this->_array[i];
     }
 
     // Extra

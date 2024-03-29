@@ -6,7 +6,7 @@
 #    By: gasouza <gasouza@student.42sp.org.br >     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 20:42:57 by gasouza           #+#    #+#              #
-#    Updated: 2024/03/17 19:14:29 by gasouza          ###   ########.fr        #
+#    Updated: 2024/03/29 12:00:37 by gasouza          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= array
 SRCS		= main.cpp
 
 COMPILER 	= c++
-CFLAGS		= -Wall -Werror -Wextra -std=c++98
+CFLAGS		= -Wall -Werror -Wextra -std=c++98 -g
 CLEANUP		= rm -rf
 
 
